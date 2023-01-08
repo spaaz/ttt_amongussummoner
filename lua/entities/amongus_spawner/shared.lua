@@ -1,0 +1,9 @@
+ENT.Base = "base_entity"
+ENT.Type = "anim"
+ENT.PrintName 	= "Amongus Spawner"
+ENT.Author 		= "Spaaz"
+ENT.Contact 	= ""
+ENT.Information	= ""
+ENT.Category	= ""
+ENT.Spawnable = true
+ENT.AdminSpawnable = true

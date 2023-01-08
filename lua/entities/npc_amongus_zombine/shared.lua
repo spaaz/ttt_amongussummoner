@@ -1,0 +1,9 @@
+ENT.Base = "base_entity"
+ENT.Type = "anim"
+ENT.PrintName 	= "Amongus"
+ENT.Author 		= "Spaaz"
+ENT.Contact 	= ""
+ENT.Information	= ""
+ENT.Category	= "Zombies"
+ENT.Spawnable = false
+ENT.AdminSpawnable = true

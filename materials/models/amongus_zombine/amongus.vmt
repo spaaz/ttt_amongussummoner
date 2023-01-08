@@ -1,0 +1,13 @@
+
+"VertexLitGeneric"
+{
+	"$baseTexture" "models/amongus_zombine/amongus"
+	"$bumpmap" "Models/amongus_zombine/amongus_normal"
+	"$model" "1"
+	"$phong" "1"
+	"$phongboost" "3"
+	"$halflambert" "1"
+	$phongexponent "33"
+	"$phongalbedotint" "1"										
+	"$phongfresnelranges"	"[.1 .5  1]"
+}
