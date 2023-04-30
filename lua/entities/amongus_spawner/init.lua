@@ -14,7 +14,6 @@ function ENT:Initialize()
 	self:DrawShadow(false)
 	self:SetCollisionGroup(COLLISION_GROUP_WEAPON)
 	self:SetName(self.PrintName)
-	self:SetOwner(self.Owner)		
 	self:Activate()
 	amongID = tostring(self:EntIndex())
 	
