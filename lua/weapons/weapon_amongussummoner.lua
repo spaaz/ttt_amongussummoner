@@ -38,6 +38,32 @@ end
 
 	SWEP.Weight					= 7
 	SWEP.DrawAmmo				= true
+    
+if SERVER then
+    function SWEP:Initialize()
+        -- Override the "thrower" of the zombine's grenade to be the original owner
+        hook.Add("OnEntityCreated", "OnEntityCreated_Grenade_" .. self:EntIndex(), function(ent)
+            if not IsValid(ent) then return end
+            if ent:GetClass() ~= "npc_grenade_frag" then return end
+
+            local entOwner = ent:GetOwner()
+            if not IsValid(entOwner) or entOwner:GetClass() ~= "npc_zombine" then return end
+
+            local plyOwner = entOwner:GetOwner()
+            if not IsValid(plyOwner) then return end
+
+            timer.Simple(0.1, function()
+                if not IsValid(ent) then return end
+                if not IsValid(plyOwner) then return end
+                ent:SetSaveValue("m_hThrower", plyOwner)
+            end)
+        end)
+    end
+
+    function SWEP:OnRemove()
+        hook.Remove("OnEntityCreated", "OnEntityCreated_Grenade_" .. self:EntIndex())
+    end
+end
 
 local function FindRespawnLocCust(pos)
     local offsets = {Vector(0,0,0)}
@@ -81,6 +107,7 @@ local function place_amongus( pos, self)
     local spawnereasd = FindRespawnLocCust(pos)
     if spawnereasd == false then
     else
+        amongus:SetOwner(self:GetOwner())
 		amongus:SetPos( spawnereasd )
 		amongus:Spawn()
 

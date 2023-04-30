@@ -74,6 +74,7 @@ if SERVER then
 										amongus:Remove()
 									else
 										ent:EmitSound("Amongus_Appear")
+										amongus:SetOwner(ent:GetOwner())
 										amongus:SetPos( spawnereasd )
 										amongus:SetAngles((ply:GetPos()- spawnereasd):Angle())
 										amongus:Spawn()									
