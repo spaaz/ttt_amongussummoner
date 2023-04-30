@@ -111,7 +111,7 @@ local function place_amongus( pos, self)
     local spawnereasd = FindRespawnLocCust(pos)
     if spawnereasd == false then
     else
-        amongus:SetOwner(self:GetOwner())
+		amongus:SetOwner(self:GetOwner())
 		amongus:SetPos( spawnereasd )
 		amongus:Spawn()
 
