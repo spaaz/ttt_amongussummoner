@@ -45,17 +45,17 @@ if SERVER then
         hook.Add("OnEntityCreated", "OnEntityCreated_Grenade_" .. self:EntIndex(), function(ent)
             if not IsValid(ent) then return end
             if ent:GetClass() ~= "npc_grenade_frag" then return end
-
             -- Get the grenade's owner, make sure it is a zombine, and make sure it is one spawned by us
-            local entOwner = ent:GetOwner()
-            if not IsValid(entOwner) or entOwner:GetClass() ~= "npc_zombine" or entOwner:GetName() ~= "amongusz" then return end
+			timer.Simple(0.1, function()
+				local entOwner = ent:GetOwner()
+				if not IsValid(entOwner) or entOwner:GetClass() ~= "npc_zombine" or entOwner:GetName() ~= "amongusz" then return end
 
-            -- Then get the zombine's owner and make sure it's a player
-            local plyOwner = entOwner:GetOwner()
-            if not IsValid(plyOwner) or not plyOwner:IsPlayer() then return end
+				-- Then get the zombine's owner and make sure it's a player
+				local plyOwner = entOwner.summoner
+				if not IsValid(plyOwner) or not plyOwner:IsPlayer() then return end
 
-            -- Wait a short delay ot make sure the grenade's key values are populated
-            timer.Simple(0.1, function()
+				-- Wait a short delay ot make sure the grenade's key values are populated
+
                 -- And then override the thrower, as long as the grenade and the owner are both still valid
                 if not IsValid(ent) then return end
                 if not IsValid(plyOwner) then return end

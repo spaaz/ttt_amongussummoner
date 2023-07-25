@@ -1,19 +1,6 @@
 AddCSLuaFile( 'shared.lua' )
 include( 'shared.lua' )
 
-function ENT:SpawnFunction( tr )
-
-	if not tr.Hit then return end
-	
-	local ent = ents.Create( "npc_amongus_zombine" )
-	---ent:SetPos( tr.HitPos + tr.HitNormal * 8 )
-	ent:Spawn()
-	ent:Activate()
-	
-	return ent
-
-end
-
 function ENT:Initialize()	
 
 	self:SetModel( "models/items/battery.mdl" )
@@ -26,7 +13,7 @@ function ENT:Initialize()
 	self.npc:SetPos(self:GetPos())
 	self.npc:SetAngles(self:GetAngles())
 	self.npc:SetSpawnEffect(false)
-	self.npc:SetOwner(self:GetOwner())
+	self.npc.summoner = self:GetOwner()
 	self.npc:Spawn()
 	self.npc:Activate()
 	self.npc:SetName("amongusz")
