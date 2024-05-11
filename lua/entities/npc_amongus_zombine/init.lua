@@ -62,6 +62,9 @@ if ( SERVER ) then
 				end
 			end		
 		end
+		if target:GetClass() == "npc_zombine" and target:GetName() == "amongusz" then
+			dmginfo:SetDamageType(DMG_NEVERGIB)
+		end
 	end
 
 	hook.Add( "EntityTakeDamage", "AmongusZDamage", AmongusZDamage)
