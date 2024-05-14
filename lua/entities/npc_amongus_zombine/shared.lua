@@ -4,6 +4,6 @@ ENT.PrintName 	= "Amongus"
 ENT.Author 		= "Spaaz"
 ENT.Contact 	= ""
 ENT.Information	= ""
-ENT.Category	= "Zombies"
+ENT.Category	= "Zombies + Enemy Aliens"
 ENT.Spawnable = false
 ENT.AdminSpawnable = true

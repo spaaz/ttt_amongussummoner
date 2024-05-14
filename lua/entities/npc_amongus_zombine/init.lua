@@ -1,6 +1,18 @@
 AddCSLuaFile( 'shared.lua' )
 include( 'shared.lua' )
 
+function ENT:SpawnFunction( tr )
+
+	if not tr.Hit then return end
+	
+	local ent = ents.Create( "npc_amongus_zombine" )
+	ent:Spawn()
+	ent:Activate()
+	
+	return ent
+
+end
+
 function ENT:Initialize()	
 
 	self:SetModel( "models/items/battery.mdl" )
