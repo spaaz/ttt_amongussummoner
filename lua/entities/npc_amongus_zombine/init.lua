@@ -29,6 +29,7 @@ function ENT:Initialize()
 	self.npc:Spawn()
 	self.npc:Activate()
 	self.npc:SetName("amongusz")
+	self.npc.ScoreName = "Amongus"
 	self:SetParent(self.npc)
  	self.npc:SetKeyValue("spawnflags",256)
 	local amongus = GetConVar("ttt_amongus_health"):GetFloat()
