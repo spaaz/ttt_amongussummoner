@@ -24,7 +24,8 @@ end
 	SWEP.Spawnable = false
 	SWEP.AdminOnly = false
 
-	SWEP.HoldType		= "pistol"
+	SWEP.HoldType              = "revolver"
+	SWEP.ReloadHoldType        = "pistol"
 	SWEP.ViewModel  = "models/weapons/cstrike/c_pist_fiveseven.mdl"
 	SWEP.WorldModel = "models/weapons/w_pist_fiveseven.mdl"
 	SWEP.Kind = 42
